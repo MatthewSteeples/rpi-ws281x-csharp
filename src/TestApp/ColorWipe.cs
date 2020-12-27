@@ -20,16 +20,8 @@ namespace TestApp
 					Wipe(controller, Color.Green);
 					Wipe(controller, Color.Blue);
 				}
-			}
-		}
 
-		private static void Wipe(WS281x controller, Color color)
-		{
-			for (int i = 0; i <= controller.Settings.Channels[0].LEDs.Count - 1; i++)
-			{
-				controller.SetLEDColor(0, i, color);
-				controller.Render();
-				System.Threading.Thread.Sleep(1000 / 15);
+				Wipe(controller, Color.Empty);
 			}
 		}
 	}

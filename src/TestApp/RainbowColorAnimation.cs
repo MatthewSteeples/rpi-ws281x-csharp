@@ -35,6 +35,8 @@ namespace TestApp
 					colorOffset++;
 					System.Threading.Thread.Sleep(50);
 				}
+
+				Wipe(controller, Color.Empty);
 			}
 		}
 
