@@ -17,12 +17,14 @@ namespace TestApp
 
 			var ledCount = Int32.Parse(Console.ReadLine());
 
+			Console.Write("What brightness do you want to use (0-255)?");
+			var brightness = byte.Parse(Console.ReadLine());
+
 			//The default settings uses a frequency of 800000 Hz and the DMA channel 10.
 			var settings = Settings.CreateDefaultSettings();
 
-			//Set brightness to maximum (255)
 			//Use Unknown as strip type. Then the type will be set in the native assembly.
-			settings.Channels[0] = new Channel(ledCount, 18, 255, false, StripType.WS2812_STRIP);
+			settings.Channels[0] = new Channel(ledCount, 18, brightness, false, StripType.WS2812_STRIP);
 
 			using (var controller = new WS281x(settings))
 			{
