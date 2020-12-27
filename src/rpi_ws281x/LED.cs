@@ -20,7 +20,7 @@ namespace rpi_ws281x
 		/// <summary>
 		/// Returns the ID / index of the LED
 		/// </summary>
-		public int ID { get; private set; }
+		public int ID { get; }
 
 		/// <summary>
 		/// Gets or sets the color for the LED

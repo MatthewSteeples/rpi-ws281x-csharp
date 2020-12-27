@@ -35,16 +35,16 @@ namespace rpi_ws281x
 		/// <summary>
 		/// Returns the used frequency in Hz
 		/// </summary>
-		public uint Frequency { get; private set; }
+		public uint Frequency { get; }
 
 		/// <summary>
 		/// Returns the DMA channel
 		/// </summary>
-		public int DMAChannel { get; private set; }
+		public int DMAChannel { get; }
 
 		/// <summary>
 		/// Returns the channels which holds the LEDs
 		/// </summary>
-		public Channel[] Channels { get; private set; }
+		public Channel[] Channels { get; }
 	}
 }

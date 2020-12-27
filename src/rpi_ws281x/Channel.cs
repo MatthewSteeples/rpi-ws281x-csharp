@@ -31,13 +31,13 @@ namespace rpi_ws281x
 		/// <summary>
 		/// Returns the GPIO pin which is connected to the LED strip
 		/// </summary>
-		public int GPIOPin { get; private set; }
+		public int GPIOPin { get; }
 
 		/// <summary>
 		/// Returns a value which indicates if the signal needs to be inverted.
 		/// Set to true to invert the signal (when using NPN transistor level shift).
 		/// </summary>
-		public bool Invert { get; private set; }
+		public bool Invert { get; }
 
 		/// <summary>
 		/// Gets or sets the brightness of the LEDs
@@ -49,12 +49,12 @@ namespace rpi_ws281x
 		/// Returns the type of the channel.
 		/// The type defines the ordering of the colors.
 		/// </summary>
-		public StripType StripType { get; private set; }
+		public StripType StripType { get; }
 
 		/// <summary>
 		/// Returns all LEDs on this channel
 		/// </summary>
-		public ReadOnlyCollection<LED> LEDs { get; private set; }
+		public ReadOnlyCollection<LED> LEDs { get; }
 
 		public int LEDCount { get => LEDs.Count; }
 		
