@@ -41,9 +41,9 @@ namespace TestApp
 			} while (input != 0);
 		}
 
-		private static IAnimation GetAnimation(int code)
+		private static BaseAnimation GetAnimation(int code)
 		{
-			IAnimation result = null;
+			BaseAnimation result = null;
 
 			switch(code)
 			{

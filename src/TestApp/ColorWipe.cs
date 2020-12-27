@@ -8,25 +8,11 @@ using System.Threading.Tasks;
 
 namespace TestApp
 {
-	class ColorWipe : IAnimation
+	class ColorWipe : BaseAnimation
 	{
-		public void Execute(AbortRequest request)
+		public override void Execute(AbortRequest request)
 		{
-			Console.Clear();
-			Console.Write("How many LEDs to you want to use: ");
-
-			var ledCount = Int32.Parse(Console.ReadLine());
-
-			Console.Write("What brightness do you want to use (0-255)?");
-			var brightness = byte.Parse(Console.ReadLine());
-
-			//The default settings uses a frequency of 800000 Hz and the DMA channel 10.
-			var settings = Settings.CreateDefaultSettings();
-
-			//Use Unknown as strip type. Then the type will be set in the native assembly.
-			settings.Channels[0] = new Channel(ledCount, 18, brightness, false, StripType.WS2812_STRIP);
-
-			using (var controller = new WS281x(settings))
+			using (var controller = GetController())
 			{
 				while(!request.IsAbortRequested)
 				{
